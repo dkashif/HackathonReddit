@@ -21,7 +21,7 @@ export const createPost = async () => {
       description: 'A Fun Number Guessing Game',
       entryUri: 'index.html',
       heading: 'Bulls and Cows',
-      appIconUri: 'default-icon.png',
+      appIconUri: 'cow-logo.jpg',
     },
     postData: {
       gameState: 'initial',
