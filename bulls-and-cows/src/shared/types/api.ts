@@ -24,4 +24,5 @@ export type GuessResponse = {
   strikes: number;
   balls: number;
   attemptsLeft: number;
+  postId: string;
 }

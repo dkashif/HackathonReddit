@@ -51,6 +51,7 @@ router.get<{ postId: string }, InitResponse | { status: string; message: string 
   }
 );
 
+
 router.post<{ postId: string }, IncrementResponse | { status: string; message: string }, unknown>(
   '/api/increment',
   async (_req, res): Promise<void> => {
