@@ -13,7 +13,7 @@ const App = () => {
   const [guesses, setGuesses] = useState<GuessHistoryItem[]>([]);
   const [gameState, setGameState] = useState({
     completed: false,
-    attemptsLeft: 10,
+    attemptsLeft: 6,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -24,6 +24,7 @@ const App = () => {
   function generateSecret(): string {
     const digits: string[] = [];
     while (digits.length < 4) {
+      [];
       const n = Math.floor(Math.random() * 10).toString();
       if (!digits.includes(n)) digits.push(n);
     }
@@ -31,7 +32,7 @@ const App = () => {
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value: string = e.target.value;
     // Only allow digits and limit to 4 characters
     if (/^\d{0,4}$/.test(value)) {
       setGuess(value);
@@ -48,14 +49,14 @@ const App = () => {
     setError('');
     setLoading(true);
 
-    const guessArr = guess.split('');
-    const secretArr = secret.split('');
+    const guessArr: string[] = guess.split('');
+    const secretArr: string[] = secret.split('');
 
-    let strikes = 0;
-    let balls = 0;
-    const matches: ("correct" | "exists" | "unmatched")[] = [];
+    let strikes: number = 0;
+    let balls: number = 0;
+    const matches: ('correct' | 'exists' | 'unmatched')[] = [];
 
-    guessArr.forEach((digit, i) => {
+    guessArr.forEach((digit: string, i: number) => {
       if (digit === secretArr[i]) {
         strikes++;
         matches.push('correct');
@@ -98,7 +99,7 @@ const App = () => {
   const handleNewGame = () => {
     setGuess('');
     setGuesses([]);
-    setGameState({ completed: false, attemptsLeft: 10 });
+    setGameState({ completed: false, attemptsLeft: 6 });
     setError('');
     setSecret(generateSecret());
   };
@@ -108,9 +109,7 @@ const App = () => {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-indigo-900 mb-2">
-            Bulls & Cows
-          </h1>
+          <h1 className="text-4xl font-bold text-indigo-900 mb-2">Bulls & Cows</h1>
           <p className="text-gray-600">Guess the 4-digit number</p>
         </div>
 
@@ -119,9 +118,7 @@ const App = () => {
           <div className="flex justify-between items-center mb-4">
             <div className="text-center flex-1">
               <p className="text-sm text-gray-600">Attempts Left</p>
-              <p className="text-2xl font-bold text-indigo-600">
-                {gameState.attemptsLeft}
-              </p>
+              <p className="text-2xl font-bold text-indigo-600">{gameState.attemptsLeft}</p>
             </div>
             <div className="text-center flex-1">
               <p className="text-sm text-gray-600">Guesses Made</p>
@@ -254,12 +251,13 @@ const App = () => {
           <ul className="text-sm text-gray-600 space-y-1">
             <li>• Guess a 4-digit number</li>
             <li>
-              • <span className="font-semibold">Bulls (Strikes)</span>: Correct digit in correct position
+              • <span className="font-semibold">Bulls (Strikes)</span>: Correct digit in correct
+              position
             </li>
             <li>
               • <span className="font-semibold">Cows (Balls)</span>: Correct digit in wrong position
             </li>
-            <li>• You have 10 attempts to guess the number</li>
+            <li>• You have 6 attempts to guess the number</li>
           </ul>
         </div>
       </div>
