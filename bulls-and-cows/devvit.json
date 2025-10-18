@@ -29,5 +29,8 @@
   },
   "triggers": {
     "onAppInstall": "/internal/on-app-install"
+  },
+  "dev": {
+    "subreddit": "bulls_and_cows_dev"
   }
 }
