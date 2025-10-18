@@ -13,7 +13,7 @@ const App = () => {
   const [guesses, setGuesses] = useState<GuessHistoryItem[]>([]);
   const [gameState, setGameState] = useState({
     completed: false,
-    attemptsLeft: 10,
+    attemptsLeft: 6,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -99,7 +99,7 @@ const App = () => {
   const handleNewGame = () => {
     setGuess('');
     setGuesses([]);
-    setGameState({ completed: false, attemptsLeft: 10 });
+    setGameState({ completed: false, attemptsLeft: 6 });
     setError('');
     setSecret(generateSecret());
   };
@@ -257,7 +257,7 @@ const App = () => {
             <li>
               • <span className="font-semibold">Cows (Balls)</span>: Correct digit in wrong position
             </li>
-            <li>• You have 10 attempts to guess the number</li>
+            <li>• You have 6 attempts to guess the number</li>
           </ul>
         </div>
       </div>
