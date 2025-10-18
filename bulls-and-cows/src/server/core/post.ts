@@ -1,12 +1,18 @@
-import { context, reddit } from '@devvit/web/server';
+import { context, reddit, redis } from '@devvit/web/server';
 
 export const createPost = async () => {
+
+  // create the secret number
+  const secret = Array.from({ length: 4 }, () => 
+    Math.floor(Math.random() * 10)
+  ).join('');
+
   const { subredditName } = context;
   if (!subredditName) {
     throw new Error('subredditName is required');
   }
 
-  return await reddit.submitCustomPost({
+  const post = await reddit.submitCustomPost({
     splash: {
       // Splash Screen Configuration
       appDisplayName: 'bulls-and-cows',
@@ -24,4 +30,8 @@ export const createPost = async () => {
     subredditName: subredditName,
     title: 'bulls-and-cows',
   });
+
+  await redis.set(`secret:${post.id}`, secret);
+  
+  return post;
 };
