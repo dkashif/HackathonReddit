@@ -39,7 +39,7 @@ export const App = () => {
             {loading ? '...' : count}
           </span>
           <button
-            className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-white w-16 h-16 text-3xl rounded-full transition-all shadow-md"
+            className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-black w-16 h-16 text-3xl rounded-full transition-all shadow-md"
             onClick={increment}
             disabled={loading}
           >
