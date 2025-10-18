@@ -2,6 +2,7 @@
 {
   "extends": "../../tools/tsconfig-base.json",
   "compilerOptions": {
+    "jsx": "react",
     "lib": ["WebWorker", "ES2023"],
 
     "outDir": "../../dist/types/shared",

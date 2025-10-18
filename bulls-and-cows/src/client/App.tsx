@@ -1,6 +1,7 @@
 import { navigateTo } from '@devvit/web/client';
 import { useCounter } from './hooks/useCounter';
 import Header from './components/Header';
+import {Game} from '../shared/Game'
 
 export const App = () => {
   const { count, username, loading, increment, decrement } = useCounter();
@@ -9,6 +10,7 @@ export const App = () => {
       <Header></Header>
       <img className="object-contain w-1/2 max-w-[250px] mx-auto" src="/snoo.png" alt="Snoo" />
       <div className="flex flex-col items-center gap-2">
+        <Game />
         <h1 className="text-2xl font-bold text-center text-gray-900 ">
           {username ? `Hey ${username} 👋 AHHHH3333` : ''}
         </h1>
