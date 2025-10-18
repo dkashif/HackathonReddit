@@ -27,5 +27,5 @@ export type GuessResponse = {
   balls: number;
   attemptsLeft: number;
   postId: string;
-  matches: MatchStatus[]; // Add this to track each digit's status
+  matches: ("correct" | "exists" | "unmatched")[];
 }

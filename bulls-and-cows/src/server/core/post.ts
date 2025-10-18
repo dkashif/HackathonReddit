@@ -31,7 +31,9 @@ export const createPost = async () => {
     title: 'bulls-and-cows',
   });
 
+  // store secret in redis
   await redis.set(`secret:${post.id}`, secret);
+  await redis.set(`attempts:${post.id}`, '0');
   
   return post;
 };
