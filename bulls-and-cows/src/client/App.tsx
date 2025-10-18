@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GuessResponse, MatchStatus } from './shared/types/api';
+import { GuessResponse, MatchStatus } from '../shared/types/api';
 
 type GuessHistoryItem = {
   guess: string;
@@ -170,7 +170,6 @@ const App = () => {
           </div>
         )}
 
-<<<<<<< HEAD
         {/* Game Lost Message */}
         {gameState.attemptsLeft === 0 && !gameState.completed && (
           <div className="bg-red-100 border-2 border-red-500 rounded-lg p-6 mb-6 text-center">
@@ -264,27 +263,6 @@ const App = () => {
               ))}
             </div>
           )}
-=======
-        {/* Counter */}
-        <div className="flex items-center justify-center gap-4">
-          <button
-            className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-white w-16 h-16 text-3xl rounded-full transition-all shadow-md"
-            onClick={decrement}
-            disabled={loading}
-          >
-            -
-          </button>
-          <span className="text-2xl font-medium text-gray-800 min-w-[50px] text-center">
-            {loading ? '...' : count}
-          </span>
-          <button
-            className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-black w-16 h-16 text-3xl rounded-full transition-all shadow-md"
-            onClick={increment}
-            disabled={loading}
-          >
-            +
-          </button>
->>>>>>> 16e57e030b139568b69a2abd5c44077c0f662aed
         </div>
 
         {/* Instructions */}
@@ -292,7 +270,7 @@ const App = () => {
           <h3 className="font-bold text-gray-800 mb-2">How to Play</h3>
           <ul className="text-sm text-gray-600 space-y-1">
             <li>• Guess a 4-digit number</li>
-            <li>• <span className="font-semibold">Bulls (Strikes)</span>: Correct digit in correct position</li>
+            <li>• <span className="font-semibold">Bulls s(Strikes)</span>: Correct digit in correct position</li>
             <li>• <span className="font-semibold">Cows (Balls)</span>: Correct digit in wrong position</li>
             <li>• You have 10 attempts to guess the number</li>
           </ul>
