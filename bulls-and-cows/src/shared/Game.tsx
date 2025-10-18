@@ -11,7 +11,7 @@ export const Game = () => {
           <input
             id={key.toString()}
             type="text"
-            className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors"
+            className="bg-gray-100 border border-red-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors"
           />
         </div>
       ))}
