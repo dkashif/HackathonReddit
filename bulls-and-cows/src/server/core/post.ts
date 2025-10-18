@@ -18,9 +18,9 @@ export const createPost = async () => {
       appDisplayName: 'bulls-and-cows',
       backgroundUri: 'default-splash.png',
       buttonLabel: 'Tap to Start',
-      description: 'Bulls and Cows - A Fun Number Guessing Game',
+      description: 'A Fun Number Guessing Game',
       entryUri: 'index.html',
-      heading: 'Welcome to the Game!',
+      heading: 'Bulls and Cows',
       appIconUri: 'default-icon.png',
     },
     postData: {
