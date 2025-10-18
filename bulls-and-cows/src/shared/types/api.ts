@@ -16,3 +16,12 @@ export type DecrementResponse = {
   postId: string;
   count: number;
 };
+
+export type GuessResponse = {
+  type: "guess";
+  color: string;
+  completed: boolean;
+  strikes: number;
+  balls: number;
+  attemptsLeft: number;
+}
