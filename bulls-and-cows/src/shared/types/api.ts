@@ -17,6 +17,8 @@ export type DecrementResponse = {
   count: number;
 };
 
+export type MatchStatus = "correct" | "exists" | "unmatched";
+
 export type GuessResponse = {
   type: "guess";
   color: string;
@@ -25,4 +27,5 @@ export type GuessResponse = {
   balls: number;
   attemptsLeft: number;
   postId: string;
+  matches: MatchStatus[]; // Add this to track each digit's status
 }
